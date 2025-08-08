@@ -29,8 +29,8 @@ if __name__ == '__main__':
     ])
 
     # 先读入数据集
-    train_dataset = torchvision.datasets.CIFAR10(root=dir, train=True, transform=transform_train)
-    eval_dataset = torchvision.datasets.CIFAR10(root=dir, train=False, transform=transform_test)
+    train_dataset = torchvision.datasets.CIFAR10(root=dir, train=True, transform=transform_train, download=True)
+    eval_dataset = torchvision.datasets.CIFAR10(root=dir, train=False, transform=transform_test, download=True)
 
     # 给数据集进行批次划分
     train_batches = torch.utils.data.DataLoader(train_dataset, batch_size=conf['batch_size'],shuffle=True)
